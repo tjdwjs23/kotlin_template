@@ -6,15 +6,15 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class tokenapiApplication : SpringBootServletInitializer() {
+class kotlinTemplateApplication : SpringBootServletInitializer() {
     override fun configure(application: SpringApplicationBuilder): SpringApplicationBuilder {
-        return application.sources(tokenapiApplication::class.java)
+        return application.sources(kotlinTemplateApplication::class.java)
     }
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            runApplication<tokenapiApplication>(*args)
+            runApplication<kotlinTemplateApplication>(*args)
         }
     }
 }

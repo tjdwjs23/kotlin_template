@@ -1,10 +1,10 @@
-package test.example.tokenapi.kotlintokenapi
+package kr.co.abc.kotlin_template
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class KotlinTokenApiApplicationTests {
+class KotlinTemplateApplicationTests {
 
     @Test
     fun contextLoads() {
