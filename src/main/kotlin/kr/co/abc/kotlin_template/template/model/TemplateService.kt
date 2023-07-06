@@ -10,7 +10,10 @@ import javax.transaction.Transactional
 
 
 @Service
-class TemplateService(@PersistenceContext private val entityManager: EntityManager) {
+class TemplateService() {
+
+    @PersistenceContext
+    private lateinit var entityManager: EntityManager
 
     @Transactional
     fun save(template: Template) {
