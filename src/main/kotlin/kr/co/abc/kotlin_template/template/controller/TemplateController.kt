@@ -3,6 +3,7 @@ package test.example.tokenapi.token.controller
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.*
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -19,7 +20,9 @@ class TemplateController(private val templateService: TemplateService) {
      * @return
      */
     @GetMapping("/")
-    fun index(): String {
+    fun index(model: Model): String {
+        var templates = templateService.getAllTemplates();
+        model.addAttribute("templates", templates)
         return "index"
     }
 
