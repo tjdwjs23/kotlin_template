@@ -4,10 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.*
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.bind.annotation.*
 import test.example.tokenapi.token.entity.Template
 import test.example.tokenapi.token.model.TemplateService
 
@@ -21,7 +18,7 @@ class TemplateController(private val templateService: TemplateService) {
      */
     @GetMapping("/")
     fun index(model: Model): String {
-        var templates = templateService.getAllTemplates();
+        val templates = templateService.getAllTemplates();
         model.addAttribute("templates", templates)
         return "index"
     }
@@ -45,6 +42,19 @@ class TemplateController(private val templateService: TemplateService) {
     fun postsSavePost(@RequestBody template: Template): String? {
         templateService.save(template)
         return "redirect:/"
+    }
+
+    /**
+     * /api/v1/posts
+     *
+     * @return
+     */
+    @GetMapping("/posts/{id}")
+    fun postsSavePost(@PathVariable("id") id:Long, model: Model): String? {
+        val template = templateService.getTemplate(id);
+        println(template)
+        model.addAttribute("template", template)
+        return "posts-detail"
     }
 
 }

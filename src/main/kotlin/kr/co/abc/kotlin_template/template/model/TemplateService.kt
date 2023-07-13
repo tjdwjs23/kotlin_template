@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service
 import test.example.tokenapi.token.entity.QTemplate
 import test.example.tokenapi.token.entity.Template
 import javax.persistence.EntityManager
+import javax.persistence.Id
 import javax.persistence.PersistenceContext
 import javax.transaction.Transactional
 
@@ -27,6 +28,14 @@ class TemplateService() {
         val query = builder.selectFrom(template)
 
         return query.fetch()
+    }
+
+    fun getTemplate(id : Long): Template? {
+        val builder = JPAQueryFactory(entityManager)
+        val template = QTemplate.template
+        val query = builder.selectFrom(template).where(template.id.eq(id))
+
+        return query.fetchOne()
     }
 
 
