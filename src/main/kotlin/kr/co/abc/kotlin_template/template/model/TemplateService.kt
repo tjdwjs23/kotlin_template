@@ -16,12 +16,6 @@ class TemplateService() {
     @PersistenceContext
     private lateinit var entityManager: EntityManager
 
-    @Transactional
-    fun save(template: Template) {
-        entityManager.persist(template)
-        entityManager.flush()
-    }
-
     fun getAllTemplates(): List<Template> {
         val builder = JPAQueryFactory(entityManager)
         val template = QTemplate.template
@@ -38,5 +32,34 @@ class TemplateService() {
         return query.fetchOne()
     }
 
+    @Transactional
+    fun save(template: Template) {
+        entityManager.persist(template)
+        entityManager.flush()
+    }
+
+    @Transactional
+    fun update(template: Template) {
+        val existingTemplate = entityManager.find(Template::class.java, template.id)
+
+        if (existingTemplate != null) {
+            var isChanged = false
+
+            if (existingTemplate.title != template.title) {
+                existingTemplate.title = template.title
+                isChanged = true
+            }
+
+            if (existingTemplate.content != template.content) {
+                existingTemplate.content = template.content
+                isChanged = true
+            }
+
+            if (isChanged) {
+                entityManager.merge(existingTemplate)
+                entityManager.flush()
+            }
+        }
+    }
 
 }

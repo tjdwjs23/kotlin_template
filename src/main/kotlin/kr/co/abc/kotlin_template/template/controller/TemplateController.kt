@@ -44,6 +44,13 @@ class TemplateController(private val templateService: TemplateService) {
         return "redirect:/"
     }
 
+    @PatchMapping("/api/v1/posts/{id}")
+    fun patchUpdatePatch(@PathVariable id: Long, @RequestBody template: Template): String? {
+        template.id = id // Assuming the Template entity has a mutable id property
+        templateService.update(template)
+        return "redirect:/"
+    }
+
     /**
      * /api/v1/posts
      *
