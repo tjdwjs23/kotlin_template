@@ -11,9 +11,9 @@ spring:
     servlet:
       cache: false
   datasource:
-    url: jdbc:mariadb://127.0.0.1:3306/kotlin_template?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: abcuser
-    password: abcuserpw
+    url: jdbc:mariadb://210.207.161.10:3306/template?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: template
+    password: template123
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     open-in-view: true

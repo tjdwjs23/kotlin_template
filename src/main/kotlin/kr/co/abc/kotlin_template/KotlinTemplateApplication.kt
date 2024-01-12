@@ -1,4 +1,4 @@
-package test.example.tokenapi
+package kr.co.abc.kotlin_template
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.builder.SpringApplicationBuilder

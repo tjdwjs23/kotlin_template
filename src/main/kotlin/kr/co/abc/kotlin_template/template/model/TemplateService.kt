@@ -1,11 +1,10 @@
-package test.example.tokenapi.token.model
+package kr.co.abc.kotlin_template.template.model
 
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Service
 import test.example.tokenapi.token.entity.QTemplate
-import test.example.tokenapi.token.entity.Template
+import kr.co.abc.kotlin_template.template.entity.Template
 import javax.persistence.EntityManager
-import javax.persistence.Id
 import javax.persistence.PersistenceContext
 import javax.transaction.Transactional
 

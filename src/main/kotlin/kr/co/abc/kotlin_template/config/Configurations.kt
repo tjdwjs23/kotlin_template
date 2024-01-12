@@ -1,4 +1,4 @@
-package test.example.tokenapi.config
+package kr.co.abc.kotlin_template.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.CorsRegistry

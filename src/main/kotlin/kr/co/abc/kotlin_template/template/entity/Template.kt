@@ -1,4 +1,4 @@
-package test.example.tokenapi.token.entity
+package kr.co.abc.kotlin_template.template.entity
 
 import java.util.Date
 import javax.persistence.*

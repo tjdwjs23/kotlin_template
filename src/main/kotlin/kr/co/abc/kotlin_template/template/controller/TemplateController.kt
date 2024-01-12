@@ -1,12 +1,10 @@
-package test.example.tokenapi.token.controller
+package kr.co.abc.kotlin_template.template.controller
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import kotlinx.coroutines.*
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
-import test.example.tokenapi.token.entity.Template
-import test.example.tokenapi.token.model.TemplateService
+import kr.co.abc.kotlin_template.template.entity.Template
+import kr.co.abc.kotlin_template.template.model.TemplateService
 
 @Controller
 class TemplateController(private val templateService: TemplateService) {

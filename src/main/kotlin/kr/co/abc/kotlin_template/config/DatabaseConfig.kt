@@ -1,4 +1,4 @@
-package test.example.tokenapi.config
+package kr.co.abc.kotlin_template.config
 
 import javax.sql.DataSource
 
