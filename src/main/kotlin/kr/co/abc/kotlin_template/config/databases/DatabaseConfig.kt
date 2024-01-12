@@ -1,4 +1,4 @@
-package kr.co.abc.kotlin_template.config
+package kr.co.abc.kotlin_template.config.databases
 
 import javax.sql.DataSource
 
@@ -12,6 +12,7 @@ import org.springframework.transaction.PlatformTransactionManager
 
 import com.zaxxer.hikari.HikariDataSource
 
+// application.yml database
 @Configuration
 class DatabaseConfig {
 
